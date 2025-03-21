@@ -369,16 +369,16 @@ def main_worker(rank, world_size, args):
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--world_size", type=int, default=2, help="사용할 GPU 수")
+    parser.add_argument("--world_size", type=int, default=2, help="num of GPUs")
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--num_workers", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
 
-    parser.add_argument("--train_dir", type=str, default="/mnt/raid0/ldh/workspace/TAC/data/audio/output/MC_Libri_adhoc/train")
-    parser.add_argument("--val_dir",   type=str, default="/mnt/raid0/ldh/workspace/TAC/data/audio/output/MC_Libri_adhoc/validation")
-    parser.add_argument("--test_dir",  type=str, default="/mnt/raid0/ldh/workspace/TAC/data/audio/output/MC_Libri_adhoc/test")
+    parser.add_argument("--train_dir", type=str, default="your_directory/MC_Libri_adhoc/train")
+    parser.add_argument("--val_dir",   type=str, default="your_directory/MC_Libri_adhoc/validation")
+    parser.add_argument("--test_dir",  type=str, default="your_directory/MC_Libri_adhoc/test")
     parser.add_argument("--save_dir",  type=str, default="./checkpoints")
 
     # mic_list: list of mics you want to use (ad-hoc)
