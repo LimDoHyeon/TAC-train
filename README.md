@@ -1,6 +1,6 @@
 ``Modified version that added train.py.``
 - Note this code uses mic1 of each speaker as label(There isn't clear explanation of label in the paper).
-- If you have better idea, please tell me through issue.
+- If you have better idea to implement train code, please tell me via e-mail: do-hyeon@gm.gist.ac.kr
 <br>
 <hr>
 
