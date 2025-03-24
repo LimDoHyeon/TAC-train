@@ -244,17 +244,16 @@ class DPRNN_base(nn.Module):
                                          num_layers=layer, bidirectional=bidirectional)
         
     def pad_segment(self, input, segment_size):
-        # input is the features: (B, N, T)
+        # input: (B, N, T)
         batch_size, dim, seq_len = input.shape
         segment_stride = segment_size // 2
-        
+
         rest = segment_size - (segment_stride + seq_len % segment_size) % segment_size
         if rest > 0:
-            pad = Variable(torch.zeros(batch_size, dim, rest)).type(input.type())
-            input = torch.cat([input, pad], 2)
-        
-        pad_aux = Variable(torch.zeros(batch_size, dim, segment_stride)).type(input.type())
-        input = torch.cat([pad_aux, input, pad_aux], 2)
+            pad = torch.zeros(batch_size, dim, rest, dtype=input.dtype, device=input.device)
+            input = torch.cat([input, pad], dim=2)
+        pad_aux = torch.zeros(batch_size, dim, segment_stride, dtype=input.dtype, device=input.device)
+        input = torch.cat([pad_aux, input, pad_aux], dim=2)
 
         return input, rest
     
