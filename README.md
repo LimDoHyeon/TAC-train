@@ -1,5 +1,5 @@
 ``Modified version that added train.py.``
-- Note this code uses mic1 of each speaker as label(There isn't clear explanation of label in the paper).
+- Note this code uses mic1 of each speaker as label(There isn't clear explanation of label in the paper), or you can modify the code using original source signal(LibriSpeech) as label(but it still remains mapping problem).
 - If you have better idea to implement train code, please tell me via e-mail: do-hyeon@gm.gist.ac.kr, or you can simply use Issues.
 <br>
 <hr>
